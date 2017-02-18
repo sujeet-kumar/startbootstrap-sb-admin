@@ -1,17 +1,16 @@
 /*!
- * Start Bootstrap - SB Admin (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ * Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
 /* Global Styles */
-
 body {
-    margin-top: 100px;
-    background-color: #222;
+    margin-top: 42px;
+    background-color: #fff;
 }
 
-@media(min-width:768px) {
+@media(max-width:768px) {
     body {
         margin-top: 50px;
     }
@@ -23,6 +22,7 @@ body {
 
 #page-wrapper {
     width: 100%;
+    min-height: 550px;
     padding: 0;
     background-color: #fff;
 }
@@ -30,6 +30,48 @@ body {
 .huge {
     font-size: 50px;
     line-height: normal;
+}
+
+/* login panel */
+.login-panel {
+    margin-top: 10%;
+}
+.login-panel > .panel-heading > .panel-title {
+    font-weight: bold;
+}
+/**************/
+
+.page-header {
+    margin: 8px 0;
+    padding: 0;
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
+}
+
+#page-footer {
+    background: #f0f0f0 none repeat scroll 0 0;
+    padding: 10px;
+}
+
+h1, .h1 {
+    font-size: 30px;
+}
+h2, .h2 {
+    font-size: 26px;
+}
+h3, .h3 {
+    font-size: 22px;
+}
+h4, .h4 {
+    font-size: 18px;
+}
+h5, .h5 {
+    font-size: 14px;
+}
+h6, .h6 {
+    font-size: 12px;
 }
 
 @media(min-width:768px) {
@@ -43,33 +85,31 @@ body {
 }
 
 /* Top Navigation */
-
 .top-nav {
     padding: 0 15px;
 }
 
-.top-nav>li {
+.top-nav > li {
     display: inline-block;
     float: left;
 }
 
-.top-nav>li>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    line-height: 20px;
+.top-nav > li > a {
+    padding: 15px;
+    min-height: 50px;
     color: #999;
 }
 
-.top-nav>li>a:hover,
-.top-nav>li>a:focus,
-.top-nav>.open>a,
-.top-nav>.open>a:hover,
-.top-nav>.open>a:focus {
+.top-nav > li > a:hover,
+.top-nav > li > a:focus,
+.top-nav > .open > a,
+.top-nav > .open > a:hover,
+.top-nav > .open > a:focus {
     color: #fff;
     background-color: #000;
 }
 
-.top-nav>.open>.dropdown-menu {
+.top-nav > .open > .dropdown-menu {
     float: left;
     position: absolute;
     margin-top: 0;
@@ -81,7 +121,7 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
-.top-nav>.open>.dropdown-menu>li>a {
+.top-nav > .open > .dropdown-menu > li > a {
     white-space: normal;
 }
 
@@ -111,6 +151,11 @@ ul.alert-dropdown {
 }
 
 /* Side Navigation */
+@media(max-width:768px) {
+    .navbar-form {
+        margin-top: 0;
+    }
+}
 
 @media(min-width:768px) {
     .side-nav {
@@ -128,30 +173,95 @@ ul.alert-dropdown {
         padding-bottom: 40px;
     }
 
-    .side-nav>li>a {
+    .side-nav > li > a {
         width: 225px;
     }
 
-    .side-nav li a:hover,
-    .side-nav li a:focus {
-        outline: none;
-        background-color: #000 !important;
+    /*.side-nav > li > a.active:not([data-toggle="collapse"]),
+    .side-nav > li > ul > li > a.active {
+            border-right: 4px solid #FFFFFF;
+    }*/
+
+    .side-nav li {
+        position: relative;
+    }
+    .side-nav > li.active > a:not([data-toggle="collapse"])::after,
+    .side-nav > li > ul > li.active > a::after {
+        content: "";
+    }
+    .side-nav > li.active > a:not([data-toggle="collapse"])::after,
+    .side-nav > li > ul > li.active > a::after {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        border-color: transparent;
+        border-image: none;
+        border-style: solid;
+        border-width: 15px 10px;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 5px;
+    }
+    .side-nav > li.active > a:not([data-toggle="collapse"])::after,
+    .side-nav > li > ul > li.active > a::after {
+        border-right-color: #FFFFFF;
     }
 }
 
-.side-nav>li>ul {
+.side-nav li a:hover,
+.side-nav li a:active {
+    background-color: #000 !important;
+    color: #fff;
+}
+.side-nav li a:hover,
+.side-nav li a:focus,
+.side-nav li a:active {
+    outline: none;
+}
+
+.side-nav > li > ul {
     padding: 0;
 }
 
-.side-nav>li>ul>li>a {
+.side-nav > li > a {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /*border-bottom: 1px solid #101010;*/
+}
+
+.side-nav > li > ul > li > a {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
     color: #999;
+    /*border-bottom: 1px solid #101010;*/
 }
 
-.side-nav>li>ul>li>a:hover {
+.side-nav > li > ul > li > a:hover,
+.side-nav > li > ul > li > a:active {
+    background-color: #000 !important;
     color: #fff;
+}
+.side-nav > li > ul > li > a:hover,
+.side-nav > li > ul > li > a:focus,
+.side-nav > li > ul > li > a:active {
+    outline: none;
+}
+
+.side-nav > li > ul > li.active > a {
+    background-color: #000;
+    color: #fff;
+}
+
+.side-nav li.active > a > .fa.fa-caret-down:before,
+.side-nav li > a[aria-expanded="true"] > .fa.fa-caret-down:before {
+    content: "\f107";
+}
+.side-nav li > a > .fa.fa-caret-down:before,
+.side-nav li > a.collapsed > .fa.fa-caret-down:before {
+    content: "\f104";
 }
 
 /* Flot Chart Containers */
