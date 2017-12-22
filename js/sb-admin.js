@@ -3,7 +3,7 @@ $(function () {
     var setActiveNav = function (url) {
         $('ul.nav a').filter(function () {
             
-            return (this.href == url || url.href.indexOf(this.href) == 0);
+            return (this.href == url || this.href.indexOf(url.href) == 0);
             
         }).addClass('active').parent().addClass('active').parent().addClass('in').parent('li').addClass('active');
     };
